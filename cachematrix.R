@@ -32,10 +32,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## value of the inverse matrix in the cache via the setinv function.
 
 cacheSolve <- function(x, matrix = NULL) {
-        if(!is.null(matrix)){
-                if(!identical(x$get(), matrix)){
+        if(!is.null(matrix) & !identical(x$get(), matrix)){
                         x$set(matrix)
-                }
         }
         
         invm <- x$getinv()
